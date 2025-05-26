@@ -5,8 +5,6 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Phone, MessageSquare, Mail, MapPin, CheckCircle, ArrowRight, Users, BarChart, Award } from "lucide-react"
-import Header from "@/components/header"
-import Footer from "@/components/footer"
 import ServiceCard from "@/components/service-card"
 import TestimonialSlider from "@/components/testimonial-slider"
 import StatsCounter from "@/components/stats-counter"
@@ -15,8 +13,6 @@ import SectionHeading from "@/components/section-heading"
 export default function HomePage() {
   return (
     <div className="flex min-h-screen flex-col">
-      <Header />
-
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-green-50 to-white pt-24 pb-16 md:pt-32 md:pb-24">
         <div className="absolute inset-0 z-0 opacity-30">
@@ -454,8 +450,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   )
 }
