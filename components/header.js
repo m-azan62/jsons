@@ -30,9 +30,8 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed left-0 top-0 z-50 w-full transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-md py-3" : "bg-transparent py-5"
-      }`}
+      className={`fixed left-0 top-0 z-50 w-full transition-all duration-300 ${isScrolled ? "bg-white shadow-md py-3" : "bg-transparent py-5"
+        }`}
     >
       <div className="container mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center">
@@ -45,7 +44,7 @@ export default function Header() {
             </div>
           </div>
         </Link>
-        
+
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center space-x-1 md:flex">
@@ -63,6 +62,9 @@ export default function Header() {
           </NavLink>
           <NavLink href="/contact" isActive={isActive("/contact")} isScrolled={isScrolled}>
             Contact
+          </NavLink>
+          <NavLink href="/career" isActive={isActive("/career")} isScrolled={isScrolled}>
+            Careers
           </NavLink>
         </nav>
 
@@ -130,13 +132,12 @@ function NavLink({ href, children, isActive, isScrolled }) {
   return (
     <Link
       href={href}
-      className={`px-4 py-2 text-sm font-medium transition-colors ${
-        isActive
+      className={`px-4 py-2 text-sm font-medium transition-colors ${isActive
           ? "text-green-600"
           : isScrolled
             ? "text-gray-700 hover:text-green-600"
             : "text-gray-900 hover:text-green-600"
-      }`}
+        }`}
     >
       {children}
     </Link>
@@ -147,9 +148,8 @@ function MobileNavLink({ href, onClick, children, isActive }) {
   return (
     <Link
       href={href}
-      className={`block py-2 text-base font-medium ${
-        isActive ? "text-green-600" : "text-gray-900 hover:text-green-600"
-      }`}
+      className={`block py-2 text-base font-medium ${isActive ? "text-green-600" : "text-gray-900 hover:text-green-600"
+        }`}
       onClick={onClick}
     >
       {children}
