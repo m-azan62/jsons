@@ -1,6 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  // ❌ Remove export output to allow API routes to run
+  // output: 'export',
+
+  experimental: {
+    serverActions: {
+      bodySizeLimit: '5mb', // or '10mb' if needed
+    },
+  },
   eslint: {
     ignoreDuringBuilds: true,
   },

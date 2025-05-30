@@ -47,9 +47,51 @@ export default function CareerPage() {
     agreeTerms: false,
   });
 
-  const handleSubmit = (e) => {
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    setLoading(true);
+
+    const form = new FormData();
+    for (const key in formData) {
+      form.append(key, formData[key]);
+    }
+    form.append('resume', selectedFile);
+
+    try {
+      const res = await fetch('/api/career', {
+        method: 'POST',
+        body: form,
+      });
+
+      if (res.ok) {
+        alert('Application submitted successfully!');
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          address: '',
+          position: '',
+          experience: '',
+          availability: '',
+          salary: '',
+          coverLetter: '',
+          agreeTerms: false,
+        });
+        setSelectedFile(null);
+      } else {
+        const error = await res.json();
+        alert(`Error: ${error.error || 'Submission failed'}`);
+      }
+    } catch (err) {
+      console.error(err);
+      alert('An unexpected error occurred.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -223,9 +265,13 @@ export default function CareerPage() {
                   <Label htmlFor="resume">Upload Resume</Label>
                   <div className="border-2 border-dashed border-gray-300 p-6 rounded-md text-center">
                     <Upload className="mx-auto h-10 w-10 text-gray-400" />
-                    <Button type="button" variant="outline" className="mt-4">
-                      Choose File
-                    </Button>
+                    <input
+                      type="file"
+                      accept=".pdf,.doc,.docx"
+                      onChange={(e) => setSelectedFile(e.target.files[0])}
+                      required
+                      className="mt-4 mx-auto text-center"
+                    />
                     <p className="mt-2 text-sm text-gray-500">
                       PDF, DOC, DOCX up to 5MB
                     </p>
@@ -261,9 +307,9 @@ export default function CareerPage() {
                 <Button
                   type="submit"
                   className="w-full bg-green-600 hover:bg-green-700 text-white py-3"
-                  disabled={!formData.agreeTerms}
+                  disabled={!formData.agreeTerms || loading}
                 >
-                  Submit Application
+                  {loading ? 'Submitting...' : 'Submit Application'}
                 </Button>
               </form>
             </CardContent>

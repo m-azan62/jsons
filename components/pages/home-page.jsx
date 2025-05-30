@@ -12,7 +12,7 @@ import SectionHeading from "@/components/section-heading"
 
 export default function HomePage() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-green-50 to-white pt-24 pb-16 md:pt-32 md:pb-24">
         <div className="absolute inset-0 z-0 opacity-30">
@@ -32,7 +32,7 @@ export default function HomePage() {
               <Badge className="mb-4 bg-green-100 text-green-800 hover:bg-green-200">
                 A LEADING TELEMARKETING COMPANY
               </Badge>
-              <h1 className="mb-6 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
+              <h1 className="mb-6 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl md:text-5xl lg:text-6xl">
                 Your Trusted Partner for{" "}
                 <span className="relative inline-block">
                   <span className="relative z-10">Sales & Lead Generation</span>
@@ -40,12 +40,12 @@ export default function HomePage() {
                 </span>{" "}
                 Success
               </h1>
-              <p className="mb-8 text-xl leading-relaxed text-gray-600">
+              <p className="mb-8 text-lg leading-relaxed text-gray-600 sm:text-xl">
                 Since 2014, we've been helping businesses increase conversions and build lasting customer relationships
                 through expert telemarketing solutions.
               </p>
 
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-col gap-4 sm:flex-row">
                 <Button size="lg" className="bg-green-600 text-white hover:bg-green-700">
                   Get a Free Consultation
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -55,7 +55,7 @@ export default function HomePage() {
                 </Button>
               </div>
 
-              <div className="mt-10 flex flex-wrap items-center gap-8">
+              <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-8">
                 <div className="flex items-center gap-2 text-sm text-gray-600">
                   <div className="flex -space-x-2">
                     {[1, 2, 3].map((i) => (
@@ -98,38 +98,38 @@ export default function HomePage() {
                   priority
                 />
               </div>
-              <div className="absolute -bottom-6 -left-6 z-0 h-24 w-24 rounded-lg bg-green-200"></div>
-              <div className="absolute -right-6 -top-6 z-0 h-24 w-24 rounded-lg bg-green-500 opacity-50"></div>
+              <div className="absolute -bottom-6 left-0 sm:-left-6 z-0 h-24 w-24 rounded-lg bg-green-200"></div>
+              <div className="absolute -right-6 -top-6 z-0 h-24 w-24 rounded-lg bg-green-500 opacity-50 hidden sm:block"></div>
             </div>
           </div>
 
-          <div className="mt-16 grid grid-cols-2 gap-4 sm:grid-cols-4">
-            <div className="flex items-center gap-3 rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-              <Phone className="h-8 w-8 text-green-500" />
-              <div>
+          <div className="mt-16 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="flex items-center gap-3 rounded-lg border border-gray-200 bg-white p-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+              <Phone className="h-8 w-8 flex-shrink-0 text-green-500" />
+              <div className="min-w-0">
                 <p className="text-xs text-gray-500">Call Us</p>
-                <p className="font-medium">+123 456 7890</p>
+                <p className="truncate font-medium text-sm">+123 456 7890</p>
               </div>
             </div>
-            <div className="flex items-center gap-3 rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-              <MessageSquare className="h-8 w-8 text-green-500" />
-              <div>
+            <div className="flex items-center gap-3 rounded-lg border border-gray-200 bg-white p-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+              <MessageSquare className="h-8 w-8 flex-shrink-0 text-green-500" />
+              <div className="min-w-0">
                 <p className="text-xs text-gray-500">WhatsApp</p>
-                <p className="font-medium">Chat Now</p>
+                <p className="truncate font-medium text-sm">Chat Now</p>
               </div>
             </div>
-            <div className="flex items-center gap-3 rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-              <Mail className="h-8 w-8 text-green-500" />
-              <div>
+            <div className="flex items-center gap-3 rounded-lg border border-gray-200 bg-white p-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+              <Mail className="h-8 w-8 flex-shrink-0 text-green-500" />
+              <div className="min-w-0">
                 <p className="text-xs text-gray-500">Email</p>
-                <p className="font-medium">info@jsons.com</p>
+                <p className="truncate font-medium text-sm">info@jsons.com</p>
               </div>
             </div>
-            <div className="flex items-center gap-3 rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-              <MapPin className="h-8 w-8 text-green-500" />
-              <div>
+            <div className="flex items-center gap-3 rounded-lg border border-gray-200 bg-white p-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+              <MapPin className="h-8 w-8 flex-shrink-0 text-green-500" />
+              <div className="min-w-0">
                 <p className="text-xs text-gray-500">Location</p>
-                <p className="font-medium">Business Ave.</p>
+                <p className="truncate font-medium text-sm">Business Ave.</p>
               </div>
             </div>
           </div>
@@ -137,7 +137,7 @@ export default function HomePage() {
       </section>
 
       {/* Services Section */}
-      <section className="py-24">
+      <section className="py-16 sm:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="OUR SERVICES"
@@ -146,7 +146,7 @@ export default function HomePage() {
           />
 
           <Tabs defaultValue="sales" className="mx-auto max-w-5xl">
-            <TabsList className="mb-8 grid w-full grid-cols-3 bg-green-50">
+            <TabsList className="mb-8 grid w-full grid-cols-1 gap-2 bg-green-50 sm:grid-cols-3 sm:gap-0">
               <TabsTrigger value="sales" className="data-[state=active]:bg-green-600 data-[state=active]:text-white">
                 Sales & Lead Generation
               </TabsTrigger>
@@ -162,7 +162,7 @@ export default function HomePage() {
             </TabsList>
 
             <TabsContent value="sales" className="mt-0">
-              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
                 <ServiceCard
                   icon="Phone"
                   title="Cold Calling"
@@ -197,7 +197,7 @@ export default function HomePage() {
             </TabsContent>
 
             <TabsContent value="support" className="mt-0">
-              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
                 <ServiceCard
                   icon="PhoneIncoming"
                   title="Inbound Support"
@@ -232,7 +232,7 @@ export default function HomePage() {
             </TabsContent>
 
             <TabsContent value="specialized" className="mt-0">
-              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
                 <ServiceCard
                   icon="Briefcase"
                   title="Finance & Insurance"
@@ -279,15 +279,15 @@ export default function HomePage() {
       </section>
 
       {/* Mission & Vision Section */}
-      <section className="bg-gradient-to-br from-green-600 to-green-700 py-24 text-white">
+      <section className="bg-gradient-to-br from-green-600 to-green-700 py-16 text-white sm:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-16 md:grid-cols-2">
+          <div className="grid gap-8 md:grid-cols-2 lg:gap-16">
             <div className="relative">
-              <div className="absolute -left-4 -top-4 h-24 w-24 rounded-lg bg-white opacity-10"></div>
-              <div className="relative z-10 rounded-lg bg-white/10 p-8 backdrop-blur-sm">
+              <div className="absolute -left-4 -top-4 h-24 w-24 rounded-lg bg-white opacity-10 hidden sm:block"></div>
+              <div className="relative z-10 rounded-lg bg-white/10 p-6 backdrop-blur-sm sm:p-8">
                 <div className="mb-6 h-1 w-16 bg-white"></div>
                 <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-green-200">OUR MISSION</h3>
-                <h2 className="mb-6 text-2xl font-bold sm:text-3xl">
+                <h2 className="mb-6 text-xl font-bold sm:text-2xl lg:text-3xl">
                   We are committed to providing our clients the best strategic guidance available
                 </h2>
                 <p className="text-green-100">
@@ -298,11 +298,11 @@ export default function HomePage() {
             </div>
 
             <div className="relative">
-              <div className="absolute -right-4 -top-4 h-24 w-24 rounded-lg bg-white opacity-10"></div>
-              <div className="relative z-10 rounded-lg bg-white/10 p-8 backdrop-blur-sm">
+              <div className="absolute -right-4 -top-4 h-24 w-24 rounded-lg bg-white opacity-10 hidden sm:block"></div>
+              <div className="relative z-10 rounded-lg bg-white/10 p-6 backdrop-blur-sm sm:p-8">
                 <div className="mb-6 h-1 w-16 bg-white"></div>
                 <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-green-200">OUR VISION</h3>
-                <h2 className="mb-6 text-2xl font-bold sm:text-3xl">
+                <h2 className="mb-6 text-xl font-bold sm:text-2xl lg:text-3xl">
                   Leading the Industry with Innovative Solutions that Forge Lasting Bonds & Drive Business Success
                 </h2>
                 <p className="text-green-100">
@@ -316,7 +316,7 @@ export default function HomePage() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-24">
+      <section className="py-16 sm:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="WHY CHOOSE US"
@@ -324,9 +324,9 @@ export default function HomePage() {
             description="We deliver results through expertise, dedication, and a customer-first approach"
           />
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-4">
             <Card className="group overflow-hidden border-none bg-white transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-              <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-green-100 opacity-0 transition-all duration-500 group-hover:opacity-100"></div>
+              <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-green-100 opacity-0 transition-all duration-500 group-hover:opacity-100 hidden sm:block"></div>
               <CardContent className="relative z-10 p-6">
                 <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-green-100 text-green-600 transition-all duration-300 group-hover:bg-green-600 group-hover:text-white">
                   <Users className="h-6 w-6" />
@@ -339,7 +339,7 @@ export default function HomePage() {
             </Card>
 
             <Card className="group overflow-hidden border-none bg-white transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-              <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-green-100 opacity-0 transition-all duration-500 group-hover:opacity-100"></div>
+              <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-green-100 opacity-0 transition-all duration-500 group-hover:opacity-100 hidden sm:block"></div>
               <CardContent className="relative z-10 p-6">
                 <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-green-100 text-green-600 transition-all duration-300 group-hover:bg-green-600 group-hover:text-white">
                   <Award className="h-6 w-6" />
@@ -350,7 +350,7 @@ export default function HomePage() {
             </Card>
 
             <Card className="group overflow-hidden border-none bg-white transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-              <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-green-100 opacity-0 transition-all duration-500 group-hover:opacity-100"></div>
+              <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-green-100 opacity-0 transition-all duration-500 group-hover:opacity-100 hidden sm:block"></div>
               <CardContent className="relative z-10 p-6">
                 <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-green-100 text-green-600 transition-all duration-300 group-hover:bg-green-600 group-hover:text-white">
                   <CheckCircle className="h-6 w-6" />
@@ -361,7 +361,7 @@ export default function HomePage() {
             </Card>
 
             <Card className="group overflow-hidden border-none bg-white transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-              <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-green-100 opacity-0 transition-all duration-500 group-hover:opacity-100"></div>
+              <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-green-100 opacity-0 transition-all duration-500 group-hover:opacity-100 hidden sm:block"></div>
               <CardContent className="relative z-10 p-6">
                 <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-green-100 text-green-600 transition-all duration-300 group-hover:bg-green-600 group-hover:text-white">
                   <BarChart className="h-6 w-6" />
@@ -375,7 +375,7 @@ export default function HomePage() {
       </section>
 
       {/* Stats Section */}
-      <section className="bg-gray-50 py-24">
+      <section className="bg-gray-50 py-16 sm:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="COMPANY STATS"
@@ -393,7 +393,7 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-24">
+      <section className="py-16 sm:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="TESTIMONIALS"
@@ -405,9 +405,9 @@ export default function HomePage() {
 
           <div className="mt-16 text-center">
             <h3 className="mb-8 text-2xl font-bold text-gray-900">Trusted by Leading Companies</h3>
-            <div className="flex flex-wrap justify-center gap-8 opacity-70">
+            <div className="flex flex-wrap justify-center gap-4 opacity-70 sm:gap-8">
               {[1, 2, 3, 4, 5].map((i) => (
-                <div key={i} className="h-12 w-32 rounded bg-gray-200"></div>
+                <div key={i} className="h-12 w-24 rounded bg-gray-200 sm:w-32"></div>
               ))}
             </div>
           </div>
@@ -424,18 +424,18 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24">
+      <section className="py-16 sm:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="overflow-hidden rounded-3xl bg-gradient-to-r from-green-600 to-green-700 shadow-2xl">
-            <div className="relative px-8 py-16 sm:px-16 sm:py-20">
-              <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-white opacity-10"></div>
-              <div className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-white opacity-10"></div>
+            <div className="relative px-6 py-12 sm:px-16 sm:py-20">
+              <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-white opacity-10 hidden sm:block"></div>
+              <div className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-white opacity-10 hidden sm:block"></div>
 
               <div className="relative z-10 mx-auto max-w-3xl text-center">
-                <h2 className="mb-6 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                <h2 className="mb-6 text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">
                   Ready to Transform Your Business?
                 </h2>
-                <p className="mb-10 text-xl leading-relaxed text-green-100">
+                <p className="mb-10 text-lg leading-relaxed text-green-100 sm:text-xl">
                   Join hundreds of satisfied clients who have boosted their sales and improved customer relationships
                   with JSons Communications.
                 </p>
