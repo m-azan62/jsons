@@ -1,52 +1,46 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
   CardDescription,
-} from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { Checkbox } from '@/components/ui/checkbox';
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
-import {
-  RadioGroup,
-  RadioGroupItem,
-} from '@/components/ui/radio-group';
-import { Upload } from 'lucide-react';
-
-import Header from '@/components/header';
-import Footer from '@/components/footer';
-import PageBanner from '@/components/page-banner';
+} from "@/components/ui/select";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Upload } from "lucide-react";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
+import PageBanner from "@/components/page-banner";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function CareerPage() {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    address: '',
-    position: '',
-    experience: '',
-    availability: '',
-    salary: '',
-    coverLetter: '',
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    address: "",
+    position: "",
+    experience: "",
+    availability: "",
+    salary: "",
+    coverLetter: "",
     agreeTerms: false,
   });
-
   const [selectedFile, setSelectedFile] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -55,52 +49,54 @@ export default function CareerPage() {
     setLoading(true);
 
     const form = new FormData();
-    for (const key in formData) {
-      form.append(key, formData[key]);
-    }
-    form.append('resume', selectedFile);
+    for (const key in formData) form.append(key, formData[key]);
+    if (selectedFile) form.append("resume", selectedFile);
 
     try {
-      const res = await fetch('/api/career', {
-        method: 'POST',
-        body: form,
-      });
-
+      const res = await fetch("/api/career", { method: "POST", body: form });
+      const data = await res.json();
       if (res.ok) {
-        alert('Application submitted successfully!');
+        toast.success("Application submitted successfully!");
         setFormData({
-          firstName: '',
-          lastName: '',
-          email: '',
-          phone: '',
-          address: '',
-          position: '',
-          experience: '',
-          availability: '',
-          salary: '',
-          coverLetter: '',
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          address: "",
+          position: "",
+          experience: "",
+          availability: "",
+          salary: "",
+          coverLetter: "",
           agreeTerms: false,
         });
         setSelectedFile(null);
       } else {
-        const error = await res.json();
-        alert(`Error: ${error.error || 'Submission failed'}`);
+        toast.error(data.error || "Submission failed.");
       }
     } catch (err) {
       console.error(err);
-      alert('An unexpected error occurred.');
+      toast.error("Unexpected error occurred.");
     } finally {
       setLoading(false);
     }
   };
 
+  const expandInput =
+    "transition-all duration-300 focus-within:ring-2 focus-within:ring-green-500";
+
   return (
     <div className="flex min-h-screen flex-col">
+      <Toaster
+        position="top-center"
+        toastOptions={{
+          style: { background: "#16a34a", color: "white", fontWeight: "bold" },
+        }}
+      />
       <Header />
-
       <PageBanner
         title="Careers at JSons Communications"
-        description="Join our award-winning telemarketing team and help businesses grow."
+        description="Join our award-winning telemarketing team."
         image="/placeholder.svg?height=600&width=1200&text=Careers"
       />
 
@@ -108,18 +104,19 @@ export default function CareerPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
           <Card className="shadow-xl">
             <CardHeader className="bg-green-600 text-white">
-              <CardTitle className="text-2xl">Career Application Form</CardTitle>
+              <CardTitle className="text-2xl">
+                Career Application Form
+              </CardTitle>
               <CardDescription className="text-green-100">
-                Fill out the form below to apply for a position with our team.
+                Fill out the form below to apply for a position.
               </CardDescription>
             </CardHeader>
-            <CardContent className="p-8">
+            <CardContent className="p-6 sm:p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="firstName">First Name</Label>
+                  <div className={expandInput}>
+                    <Label>First Name</Label>
                     <Input
-                      id="firstName"
                       value={formData.firstName}
                       onChange={(e) =>
                         setFormData({ ...formData, firstName: e.target.value })
@@ -127,10 +124,9 @@ export default function CareerPage() {
                       required
                     />
                   </div>
-                  <div>
-                    <Label htmlFor="lastName">Last Name</Label>
+                  <div className={expandInput}>
+                    <Label>Last Name</Label>
                     <Input
-                      id="lastName"
                       value={formData.lastName}
                       onChange={(e) =>
                         setFormData({ ...formData, lastName: e.target.value })
@@ -139,12 +135,10 @@ export default function CareerPage() {
                     />
                   </div>
                 </div>
-
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="email">Email</Label>
+                  <div className={expandInput}>
+                    <Label>Email</Label>
                     <Input
-                      id="email"
                       type="email"
                       value={formData.email}
                       onChange={(e) =>
@@ -153,10 +147,9 @@ export default function CareerPage() {
                       required
                     />
                   </div>
-                  <div>
-                    <Label htmlFor="phone">Phone</Label>
+                  <div className={expandInput}>
+                    <Label>Phone</Label>
                     <Input
-                      id="phone"
                       type="tel"
                       value={formData.phone}
                       onChange={(e) =>
@@ -166,122 +159,125 @@ export default function CareerPage() {
                     />
                   </div>
                 </div>
-
-                <div>
-                  <Label htmlFor="address">Address</Label>
+                <div className={expandInput}>
+                  <Label>Address</Label>
                   <Input
-                    id="address"
                     value={formData.address}
                     onChange={(e) =>
                       setFormData({ ...formData, address: e.target.value })
                     }
                   />
                 </div>
-
                 <div>
-                  <Label htmlFor="position">Position Applying For</Label>
+                  <Label>Position</Label>
                   <Select
                     value={formData.position}
-                    onValueChange={(value) =>
-                      setFormData({ ...formData, position: value })
+                    onValueChange={(val) =>
+                      setFormData({ ...formData, position: val })
                     }
                   >
                     <SelectTrigger>
-                      <SelectValue placeholder="Select a position" />
+                      <SelectValue placeholder="Select position" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="telemarketer">Telemarketer</SelectItem>
-                      <SelectItem value="lead-generation">Lead Generation Specialist</SelectItem>
-                      <SelectItem value="sales-rep">Sales Representative</SelectItem>
-                      <SelectItem value="team-lead">Team Lead</SelectItem>
-                      <SelectItem value="account-manager">Account Manager</SelectItem>
-                      <SelectItem value="customer-service">Customer Service Representative</SelectItem>
+                      {[
+                        "telemarketer",
+                        "lead-generation",
+                        "sales-rep",
+                        "team-lead",
+                        "account-manager",
+                        "customer-service",
+                      ].map((p) => (
+                        <SelectItem key={p} value={p}>
+                          {p.replace("-", " ")}
+                        </SelectItem>
+                      ))}
                     </SelectContent>
                   </Select>
                 </div>
-
                 <div>
                   <Label>Experience</Label>
                   <RadioGroup
                     value={formData.experience}
-                    onValueChange={(value) =>
-                      setFormData({ ...formData, experience: value })
+                    onValueChange={(val) =>
+                      setFormData({ ...formData, experience: val })
                     }
+                    className="flex flex-wrap gap-4 mt-2"
                   >
-                    <div className="flex flex-wrap gap-4 mt-2">
-                      {['0-1', '2-3', '4-5', '5+'].map((val) => (
-                        <div key={val} className="flex items-center space-x-2">
-                          <RadioGroupItem value={val} id={`exp-${val}`} />
-                          <Label htmlFor={`exp-${val}`}>{val} years</Label>
-                        </div>
-                      ))}
-                    </div>
+                    {["0-1", "2-3", "4-5", "5+"].map((val) => (
+                      <div key={val} className="flex items-center space-x-2">
+                        <RadioGroupItem value={val} id={`exp-${val}`} />
+                        <Label htmlFor={`exp-${val}`}>{val} years</Label>
+                      </div>
+                    ))}
                   </RadioGroup>
                 </div>
-
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <Label htmlFor="availability">Availability</Label>
+                    <Label>Availability</Label>
                     <Select
                       value={formData.availability}
-                      onValueChange={(value) =>
-                        setFormData({ ...formData, availability: value })
+                      onValueChange={(val) =>
+                        setFormData({ ...formData, availability: val })
                       }
                     >
                       <SelectTrigger>
-                        <SelectValue placeholder="Select availability" />
+                        <SelectValue placeholder="Select" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="full-time">Full-time</SelectItem>
-                        <SelectItem value="part-time">Part-time</SelectItem>
-                        <SelectItem value="contract">Contract</SelectItem>
-                        <SelectItem value="flexible">Flexible</SelectItem>
+                        {["full-time", "part-time", "contract", "flexible"].map(
+                          (opt) => (
+                            <SelectItem key={opt} value={opt}>
+                              {opt}
+                            </SelectItem>
+                          )
+                        )}
                       </SelectContent>
                     </Select>
                   </div>
                   <div>
-                    <Label htmlFor="salary">Expected Salary</Label>
+                    <Label>Salary</Label>
                     <Select
                       value={formData.salary}
-                      onValueChange={(value) =>
-                        setFormData({ ...formData, salary: value })
+                      onValueChange={(val) =>
+                        setFormData({ ...formData, salary: val })
                       }
                     >
                       <SelectTrigger>
-                        <SelectValue placeholder="Select range" />
+                        <SelectValue placeholder="Expected range" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="30-40k">$30,000 - $40,000</SelectItem>
-                        <SelectItem value="40-50k">$40,000 - $50,000</SelectItem>
-                        <SelectItem value="50-60k">$50,000 - $60,000</SelectItem>
-                        <SelectItem value="60k+">$60,000+</SelectItem>
-                        <SelectItem value="negotiable">Negotiable</SelectItem>
+                        {[
+                          "30-40k",
+                          "40-50k",
+                          "50-60k",
+                          "60k+",
+                          "negotiable",
+                        ].map((s) => (
+                          <SelectItem key={s} value={s}>
+                            {s}
+                          </SelectItem>
+                        ))}
                       </SelectContent>
                     </Select>
                   </div>
                 </div>
-
                 <div>
-                  <Label htmlFor="resume">Upload Resume</Label>
-                  <div className="border-2 border-dashed border-gray-300 p-6 rounded-md text-center">
+                  <Label>Upload Resume</Label>
+                  <div className="border-2 border-dashed border-gray-300 p-4 rounded-md text-center">
                     <Upload className="mx-auto h-10 w-10 text-gray-400" />
                     <input
                       type="file"
                       accept=".pdf,.doc,.docx"
                       onChange={(e) => setSelectedFile(e.target.files[0])}
                       required
-                      className="mt-4 mx-auto text-center"
+                      className="mt-2 text-sm"
                     />
-                    <p className="mt-2 text-sm text-gray-500">
-                      PDF, DOC, DOCX up to 5MB
-                    </p>
                   </div>
                 </div>
-
-                <div>
-                  <Label htmlFor="coverLetter">Cover Letter</Label>
+                <div className={expandInput}>
+                  <Label>Cover Letter</Label>
                   <Textarea
-                    id="coverLetter"
                     rows={4}
                     value={formData.coverLetter}
                     onChange={(e) =>
@@ -290,26 +286,23 @@ export default function CareerPage() {
                     placeholder="Tell us about yourself..."
                   />
                 </div>
-
                 <div className="flex items-center space-x-2">
                   <Checkbox
-                    id="terms"
                     checked={formData.agreeTerms}
-                    onCheckedChange={(checked) =>
-                      setFormData({ ...formData, agreeTerms: checked })
+                    onCheckedChange={(val) =>
+                      setFormData({ ...formData, agreeTerms: val })
                     }
                   />
-                  <Label htmlFor="terms" className="text-sm">
+                  <Label className="text-sm">
                     I agree to the terms and conditions *
                   </Label>
                 </div>
-
                 <Button
                   type="submit"
-                  className="w-full bg-green-600 hover:bg-green-700 text-white py-3"
                   disabled={!formData.agreeTerms || loading}
+                  className="w-full bg-green-600 hover:bg-green-700 text-white py-3"
                 >
-                  {loading ? 'Submitting...' : 'Submit Application'}
+                  {loading ? "Submitting..." : "Submit Application"}
                 </Button>
               </form>
             </CardContent>
