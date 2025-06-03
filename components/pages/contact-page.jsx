@@ -14,7 +14,7 @@ export default function ContactPage() {
       <PageBanner
         title="Contact Us"
         description="Get in touch with our team for any inquiries or to request a free consultation"
-        image="/placeholder.svg?height=600&width=1200&text=Contact+Us"
+        image="/placeholder.png?height=600&width=1200&text=Contact+Us"
       />
 
       {/* Contact Section */}
@@ -75,7 +75,7 @@ export default function ContactPage() {
 
               <div className="relative h-[300px] overflow-hidden rounded-lg">
                 <Image
-                  src="/placeholder.svg?height=600&width=800&text=Map"
+                  src="/placeholder.png?height=600&width=800&text=Map"
                   alt="Office Location Map"
                   fill
                   className="object-cover"
@@ -101,7 +101,7 @@ export default function ContactPage() {
             <div className="overflow-hidden rounded-lg bg-white shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
               <div className="relative h-48">
                 <Image
-                  src="/placeholder.svg?height=400&width=600&text=New+York"
+                  src="/placeholder.png?height=400&width=600&text=New+York"
                   alt="New York Office"
                   fill
                   className="object-cover"
@@ -120,7 +120,7 @@ export default function ContactPage() {
             <div className="overflow-hidden rounded-lg bg-white shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
               <div className="relative h-48">
                 <Image
-                  src="/placeholder.svg?height=400&width=600&text=London"
+                  src="/placeholder.png?height=400&width=600&text=London"
                   alt="London Office"
                   fill
                   className="object-cover"
@@ -139,7 +139,7 @@ export default function ContactPage() {
             <div className="overflow-hidden rounded-lg bg-white shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
               <div className="relative h-48">
                 <Image
-                  src="/placeholder.svg?height=400&width=600&text=Singapore"
+                  src="/placeholder.png?height=400&width=600&text=Singapore"
                   alt="Singapore Office"
                   fill
                   className="object-cover"

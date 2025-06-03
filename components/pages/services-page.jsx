@@ -19,7 +19,7 @@ export default function ServicesPage() {
       <PageBanner
         title="Our Services"
         description="Comprehensive telemarketing solutions tailored to your business needs"
-        image="/placeholder.svg?height=600&width=1200&text=Our+Services"
+        image="/placeholder.png?height=600&width=1200&text=Our+Services"
       />
 
       {/* Main Services Section */}
@@ -168,7 +168,7 @@ export default function ServicesPage() {
             <div className="relative">
               <div className="relative z-10 overflow-hidden rounded-2xl shadow-2xl">
                 <Image
-                  src="/placeholder.svg?height=800&width=600"
+                  src="/placeholder.png?height=800&width=600"
                   alt="Our Service Process"
                   width={600}
                   height={800}
@@ -269,7 +269,7 @@ export default function ServicesPage() {
             <Card className="group overflow-hidden border-none bg-white transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
               <div className="relative h-48">
                 <Image
-                  src="/placeholder.svg?height=400&width=600&text=Finance"
+                  src="/placeholder.png?height=400&width=600&text=Finance"
                   alt="Finance Industry"
                   fill
                   className="object-cover"
@@ -289,7 +289,7 @@ export default function ServicesPage() {
             <Card className="group overflow-hidden border-none bg-white transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
               <div className="relative h-48">
                 <Image
-                  src="/placeholder.svg?height=400&width=600&text=Insurance"
+                  src="/placeholder.png?height=400&width=600&text=Insurance"
                   alt="Insurance Industry"
                   fill
                   className="object-cover"
@@ -309,7 +309,7 @@ export default function ServicesPage() {
             <Card className="group overflow-hidden border-none bg-white transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
               <div className="relative h-48">
                 <Image
-                  src="/placeholder.svg?height=400&width=600&text=E-commerce"
+                  src="/placeholder.png?height=400&width=600&text=E-commerce"
                   alt="E-commerce Industry"
                   fill
                   className="object-cover"
@@ -329,7 +329,7 @@ export default function ServicesPage() {
             <Card className="group overflow-hidden border-none bg-white transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
               <div className="relative h-48">
                 <Image
-                  src="/placeholder.svg?height=400&width=600&text=Healthcare"
+                  src="/placeholder.png?height=400&width=600&text=Healthcare"
                   alt="Healthcare Industry"
                   fill
                   className="object-cover"
@@ -349,7 +349,7 @@ export default function ServicesPage() {
             <Card className="group overflow-hidden border-none bg-white transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
               <div className="relative h-48">
                 <Image
-                  src="/placeholder.svg?height=400&width=600&text=Technology"
+                  src="/placeholder.png?height=400&width=600&text=Technology"
                   alt="Technology Industry"
                   fill
                   className="object-cover"
@@ -369,7 +369,7 @@ export default function ServicesPage() {
             <Card className="group overflow-hidden border-none bg-white transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
               <div className="relative h-48">
                 <Image
-                  src="/placeholder.svg?height=400&width=600&text=Real+Estate"
+                  src="/placeholder.png?height=400&width=600&text=Real+Estate"
                   alt="Real Estate Industry"
                   fill
                   className="object-cover"

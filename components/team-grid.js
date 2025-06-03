@@ -7,7 +7,7 @@ const team = [
     name: "John Smith",
     position: "CEO & Founder",
     bio: "With over 15 years of experience in telemarketing and BPO services.",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/placeholder.png?height=300&width=300",
     social: {
       linkedin: "#",
       twitter: "#",
@@ -18,7 +18,7 @@ const team = [
     name: "Lisa Johnson",
     position: "Operations Director",
     bio: "Expert in streamlining processes and maximizing team performance.",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/placeholder.png?height=300&width=300",
     social: {
       linkedin: "#",
       twitter: "#",
@@ -29,7 +29,7 @@ const team = [
     name: "David Chen",
     position: "Sales Director",
     bio: "Specializes in developing effective sales strategies and team leadership.",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/placeholder.png?height=300&width=300",
     social: {
       linkedin: "#",
       twitter: "#",
@@ -40,7 +40,7 @@ const team = [
     name: "Maria Rodriguez",
     position: "Client Success Manager",
     bio: "Dedicated to ensuring client satisfaction and building long-term relationships.",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/placeholder.png?height=300&width=300",
     social: {
       linkedin: "#",
       twitter: "#",
@@ -59,7 +59,7 @@ export default function TeamGrid() {
         >
           <div className="relative h-80 overflow-hidden">
             <Image
-              src={member.image || "/placeholder.svg"}
+              src={member.image || "/placeholder.png"}
               alt={member.name}
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-110"

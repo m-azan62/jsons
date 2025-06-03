@@ -97,7 +97,7 @@ export default function CareerPage() {
       <PageBanner
         title="Careers at JSons Communications"
         description="Join our award-winning telemarketing team."
-        image="/placeholder.svg?height=600&width=1200&text=Careers"
+        image="/placeholder.png?height=600&width=1200&text=Careers"
       />
 
       <section className="py-20 bg-white flex-1">

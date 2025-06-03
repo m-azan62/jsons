@@ -37,10 +37,12 @@ export default function Header() {
         <Link href="/" className="flex items-center">
           <div className="relative h-10 w-40">
             <div className="flex items-center gap-2">
-              <div className="h-10 w-10 rounded-lg bg-green-600"></div>
-              <span className={`text-xl font-bold ${isScrolled ? "text-gray-900" : "text-gray-900"}`}>
-                JSons Communications
-              </span>
+
+              <img
+                src="/json.png"
+                alt="JSons Communications Logo"
+                className="h-12 w-auto mx-12"
+              />
             </div>
           </div>
         </Link>
@@ -115,6 +117,9 @@ export default function Header() {
               <MobileNavLink href="/contact" isActive={isActive("/contact")} onClick={() => setIsMenuOpen(false)}>
                 Contact
               </MobileNavLink>
+               <MobileNavLink href="/career" isActive={isActive("/career")} onClick={() => setIsMenuOpen(false)}>
+                Careers
+              </MobileNavLink>
               <div className="pt-4">
                 <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
                   <Button className="w-full bg-green-600 text-white hover:bg-green-700">Get a Quote</Button>
@@ -133,10 +138,10 @@ function NavLink({ href, children, isActive, isScrolled }) {
     <Link
       href={href}
       className={`px-4 py-2 text-sm font-medium transition-colors ${isActive
-          ? "text-green-600"
-          : isScrolled
-            ? "text-gray-700 hover:text-green-600"
-            : "text-gray-900 hover:text-green-600"
+        ? "text-green-600"
+        : isScrolled
+          ? "text-gray-700 hover:text-green-600"
+          : "text-gray-900 hover:text-green-600"
         }`}
     >
       {children}

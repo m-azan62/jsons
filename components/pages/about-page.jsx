@@ -19,7 +19,7 @@ export default function AboutPage() {
       <PageBanner
         title="About JSons Communications"
         description="Learn about our story, mission, and the team behind our success"
-        image="/placeholder.svg?height=600&width=1200&text=About+Us"
+        image="/placeholder.png?height=600&width=1200&text=About+Us"
       />
 
       {/* Company Story Section */}
@@ -29,7 +29,7 @@ export default function AboutPage() {
             <div className="relative">
               <div className="relative z-10 overflow-hidden rounded-2xl shadow-2xl">
                 <Image
-                  src="/placeholder.svg?height=800&width=600"
+                  src="/placeholder.png?height=800&width=600"
                   alt="JSons Communications Office"
                   width={600}
                   height={800}

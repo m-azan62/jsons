@@ -16,7 +16,7 @@ export default function TestimonialsPage() {
       <PageBanner
         title="Client Testimonials"
         description="Hear what our clients have to say about their experience working with us"
-        image="/placeholder.svg?height=600&width=1200&text=Testimonials"
+        image="/placeholder.png?height=600&width=1200&text=Testimonials"
       />
 
       {/* Featured Testimonials */}
@@ -53,7 +53,7 @@ export default function TestimonialsPage() {
                   <div className="flex items-center">
                     <div className="relative mr-4 h-12 w-12 overflow-hidden rounded-full">
                       <Image
-                        src={`/placeholder.svg?height=100&width=100&text=${i}`}
+                        src={`/placeholder.png?height=100&width=100&text=${i}`}
                         alt="Client"
                         fill
                         className="object-cover"
@@ -84,7 +84,7 @@ export default function TestimonialsPage() {
             <Card className="group overflow-hidden border-none bg-white shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
               <div className="relative h-48">
                 <Image
-                  src="/placeholder.svg?height=400&width=600&text=Case+Study+1"
+                  src="/placeholder.png?height=400&width=600&text=Case+Study+1"
                   alt="Case Study 1"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
@@ -109,7 +109,7 @@ export default function TestimonialsPage() {
             <Card className="group overflow-hidden border-none bg-white shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
               <div className="relative h-48">
                 <Image
-                  src="/placeholder.svg?height=400&width=600&text=Case+Study+2"
+                  src="/placeholder.png?height=400&width=600&text=Case+Study+2"
                   alt="Case Study 2"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
@@ -134,7 +134,7 @@ export default function TestimonialsPage() {
             <Card className="group overflow-hidden border-none bg-white shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
               <div className="relative h-48">
                 <Image
-                  src="/placeholder.svg?height=400&width=600&text=Case+Study+3"
+                  src="/placeholder.png?height=400&width=600&text=Case+Study+3"
                   alt="Case Study 3"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"

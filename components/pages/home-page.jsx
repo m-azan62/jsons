@@ -90,7 +90,7 @@ export default function HomePage() {
             <div className="relative">
               <div className="relative z-10 overflow-hidden rounded-2xl shadow-2xl">
                 <Image
-                  src="/placeholder.svg?height=800&width=600"
+                  src="/placeholder.png?height=800&width=600"
                   alt="JSons Communications Team"
                   width={600}
                   height={800}

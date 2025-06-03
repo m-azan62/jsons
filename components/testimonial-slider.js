@@ -13,7 +13,7 @@ const testimonials = [
     author: "Sarah Johnson",
     position: "Marketing Director",
     company: "FinTech Solutions",
-    image: "/placeholder.svg?height=100&width=100",
+    image: "/placeholder.png?height=100&width=100",
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const testimonials = [
     author: "Michael Chen",
     position: "Sales Manager",
     company: "Insurance Partners",
-    image: "/placeholder.svg?height=100&width=100",
+    image: "/placeholder.png?height=100&width=100",
   },
   {
     id: 3,
@@ -31,7 +31,7 @@ const testimonials = [
     author: "Emily Rodriguez",
     position: "Customer Success Lead",
     company: "E-Commerce Plus",
-    image: "/placeholder.svg?height=100&width=100",
+    image: "/placeholder.png?height=100&width=100",
   },
   {
     id: 4,
@@ -40,7 +40,7 @@ const testimonials = [
     author: "David Wilson",
     position: "Operations Director",
     company: "Global Services Inc.",
-    image: "/placeholder.svg?height=100&width=100",
+    image: "/placeholder.png?height=100&width=100",
   },
 ]
 
@@ -86,7 +86,7 @@ export default function TestimonialSlider() {
                   <div className="flex items-center">
                     <div className="relative mr-4 h-16 w-16 overflow-hidden rounded-full">
                       <Image
-                        src={testimonials[activeIndex].image || "/placeholder.svg"}
+                        src={testimonials[activeIndex].image || "/placeholder.png"}
                         alt={testimonials[activeIndex].author}
                         fill
                         className="object-cover"
@@ -106,7 +106,7 @@ export default function TestimonialSlider() {
           <div className="relative md:col-span-3">
             <div className="relative h-[300px] overflow-hidden rounded-xl md:h-full">
               <Image
-                src={`/placeholder.svg?height=600&width=800&text=Testimonial ${activeIndex + 1}`}
+                src={`/placeholder.png?height=600&width=800&text=Testimonial ${activeIndex + 1}`}
                 alt="Testimonial"
                 fill
                 className="object-cover"

@@ -10,8 +10,11 @@ export default function Footer() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <div className="mb-6 flex items-center gap-2">
-              <div className="h-10 w-10 rounded-lg bg-green-600"></div>
-              <span className="text-xl font-bold">JSons Communications</span>
+              <img
+                src="/json.png"
+                alt="JSons Communications Logo"
+                className="h-20 w-auto mx-12"
+              />
             </div>
             <p className="mb-6 text-gray-400">
               Your trusted partner for telemarketing and BPO services since 2014. We help businesses grow through

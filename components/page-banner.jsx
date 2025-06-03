@@ -4,7 +4,7 @@ export default function PageBanner({ title, description, image }) {
   return (
     <section className="relative pt-24">
       <div className="absolute inset-0 z-0">
-        <Image src={image || "/placeholder.svg"} alt={title} fill className="object-cover" priority />
+        <Image src={image || "/placeholder.png"} alt={title} fill className="object-cover" priority />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"></div>
       </div>
       <div className="container relative z-10 mx-auto px-4 py-24 sm:px-6 lg:px-8">
