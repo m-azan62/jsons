@@ -7,6 +7,9 @@
 /.next/
 /out/
 
+# Add Employees Card To DB
+/add-employee-query
+
 # production
 /build
 
