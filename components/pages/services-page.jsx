@@ -32,7 +32,7 @@ export default function ServicesPage() {
           />
 
           <Tabs defaultValue="sales" className="mx-auto max-w-5xl">
-            <TabsList className="mb-8 grid w-full grid-cols-3 bg-green-50">
+            <TabsList className="mb-8 grid w-full grid-cols-1 gap-2 bg-green-50 sm:grid-cols-3 sm:gap-0">
               <TabsTrigger value="sales" className="data-[state=active]:bg-green-600 data-[state=active]:text-white">
                 Sales & Lead Generation
               </TabsTrigger>
