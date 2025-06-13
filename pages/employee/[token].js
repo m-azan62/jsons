@@ -11,7 +11,7 @@ export default function EmployeeCard({ employee, error }) {
         alt={employee.name}
         style={{ maxWidth: '300px' }}
       />
-      <h1>{employee.name}</h1>
+      {/* <h1>{employee.name}</h1> */}
     </div>
   );
 }
