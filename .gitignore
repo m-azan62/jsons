@@ -10,8 +10,7 @@
 # Add Employees Card To DB
 /add-employee-query
 
-# Employee card tokens
-/employee_150.json
+
 
 # production
 /build
