@@ -6,31 +6,31 @@ export default function ProcessTimeline() {
       number: "01",
       title: "Consultation & Needs Assessment",
       description: "We begin by understanding your business, goals, and target audience to create a tailored strategy.",
-      image: "/placeholder.png?height=200&width=300&text=Step+1",
+      image: "/pic/CONSULTATION.webp?height=200&width=300&text=Step+1",
     },
     {
       number: "02",
       title: "Strategy & Campaign Planning",
       description: "Our team develops a comprehensive plan with clear objectives, scripts, and performance metrics.",
-      image: "/placeholder.png?height=200&width=300&text=Step+2",
+      image: "/pic/Campaign-Planning.webp?height=200&width=300&text=Step+2",
     },
     {
       number: "03",
       title: "Training & Call Execution",
       description: "Our specialized agents are trained on your products/services before beginning the campaign.",
-      image: "/placeholder.png?height=200&width=300&text=Step+3",
+      image: "/pic/Call-Execution.webp?height=200&width=300&text=Step+3",
     },
     {
       number: "04",
       title: "Quality Assurance & Reporting",
       description: "We monitor calls, provide detailed reports, and ensure compliance with industry standards.",
-      image: "/placeholder.png?height=200&width=300&text=Step+4",
+      image: "/pic/Reporting.webp?height=200&width=300&text=Step+4",
     },
     {
       number: "05",
       title: "Continuous Optimization",
       description: "We analyze results and refine our approach to maximize performance and ROI.",
-      image: "/placeholder.png?height=200&width=300&text=Step+5",
+      image: "/pic/Continuous-Optimization.webp?height=200&width=300&text=Step+5",
     },
   ]
 

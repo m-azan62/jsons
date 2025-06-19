@@ -4,10 +4,10 @@ import { Facebook, Twitter, Linkedin } from "lucide-react"
 
 const team = [
   {
-    name: "John Smith",
+    name: "Hussam Janjua",
     position: "CEO & Founder",
     bio: "With over 15 years of experience in telemarketing and BPO services.",
-    image: "/placeholder.png?height=300&width=300",
+    image: "/leaders/1.jpg?height=300&width=300",
     social: {
       linkedin: "#",
       twitter: "#",
@@ -15,10 +15,10 @@ const team = [
     },
   },
   {
-    name: "Lisa Johnson",
+    name: "Rohan Janjua",
     position: "Operations Director",
     bio: "Expert in streamlining processes and maximizing team performance.",
-    image: "/placeholder.png?height=300&width=300",
+    image: "/leaders/2.jpg?height=300&width=300",
     social: {
       linkedin: "#",
       twitter: "#",
@@ -26,10 +26,10 @@ const team = [
     },
   },
   {
-    name: "David Chen",
+    name: "Taimoor Janjua",
     position: "Sales Director",
     bio: "Specializes in developing effective sales strategies and team leadership.",
-    image: "/placeholder.png?height=300&width=300",
+    image: "/leaders/3.jpg?height=300&width=300",
     social: {
       linkedin: "#",
       twitter: "#",
@@ -37,10 +37,10 @@ const team = [
     },
   },
   {
-    name: "Maria Rodriguez",
+    name: "Syed Fazail Hassan",
     position: "Client Success Manager",
     bio: "Dedicated to ensuring client satisfaction and building long-term relationships.",
-    image: "/placeholder.png?height=300&width=300",
+    image: "/leaders/4.jpg?height=300&width=300",
     social: {
       linkedin: "#",
       twitter: "#",

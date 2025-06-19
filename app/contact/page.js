@@ -35,7 +35,7 @@ export default function ContactPageContainer() {
       <PageBanner
         title="Contact Us"
         description="Get in touch with our team for any inquiries or to request a free consultation"
-        image="/placeholder.png?height=600&width=1200&text=Contact+Us"
+        image="/pic/contact-us.webp?height=600&width=1200&text=Contact+Us"
       />
 
       <section className="py-24">

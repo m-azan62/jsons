@@ -1,7 +1,8 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { ArrowRight, Facebook, Twitter, Linkedin, Instagram, Mail } from "lucide-react"
+import { ArrowRight, Facebook, Linkedin, Instagram, Mail } from "lucide-react"
+import { FaTiktok } from "react-icons/fa"
 
 export default function Footer() {
   return (
@@ -21,32 +22,45 @@ export default function Footer() {
               effective communication strategies.
             </p>
             <div className="flex space-x-4">
-              <SocialLink icon={<Facebook className="h-5 w-5" />} href="#" />
-              <SocialLink icon={<Twitter className="h-5 w-5" />} href="#" />
-              <SocialLink icon={<Linkedin className="h-5 w-5" />} href="#" />
-              <SocialLink icon={<Instagram className="h-5 w-5" />} href="#" />
+              <SocialLink
+                icon={<Facebook className="h-5 w-5" />}
+                href="https://www.facebook.com/share/1ZU5y5Nw6D/"
+              />
+              <SocialLink
+                icon={<Linkedin className="h-5 w-5" />}
+                href="https://www.linkedin.com/company/jsons-communications/posts/?feedView=all"
+              />
+              <SocialLink
+                icon={<Instagram className="h-5 w-5" />}
+                href="https://www.instagram.com/j.sonscommunications/"
+              />
+              <SocialLink
+                icon={<FaTiktok className="h-5 w-5" />}
+                href="https://www.tiktok.com/@jsonscom?_t=ZS-8xHre3XOano&_r=1"
+              />
             </div>
+
           </div>
 
           <div>
             <h3 className="mb-6 text-lg font-semibold">Services</h3>
             <ul className="space-y-4">
-              <FooterLink href="#">Sales & Lead Generation</FooterLink>
-              <FooterLink href="#">Customer Support</FooterLink>
-              <FooterLink href="#">Quality Assurance</FooterLink>
-              <FooterLink href="#">Finance & Insurance</FooterLink>
-              <FooterLink href="#">E-commerce Support</FooterLink>
+              <FooterLink href="/services#lead-generation">Lead Generation</FooterLink>
+              <FooterLink href="/services#life-insurance-sales">Life Insurance Sales</FooterLink>
+              <FooterLink href="/services#quality-assurance">Quality Assurance</FooterLink>
+              <FooterLink href="/services#inbound-customer-service">Inbound &amp; Customer Service</FooterLink>
             </ul>
           </div>
+
 
           <div>
             <h3 className="mb-6 text-lg font-semibold">Company</h3>
             <ul className="space-y-4">
-              <FooterLink href="#">About Us</FooterLink>
-              <FooterLink href="#">Our Team</FooterLink>
-              <FooterLink href="#">Careers</FooterLink>
-              <FooterLink href="#">Testimonials</FooterLink>
-              <FooterLink href="#">Contact</FooterLink>
+              <FooterLink href="/about">About Us</FooterLink>
+              <FooterLink href="/services">Service</FooterLink>
+              <FooterLink href="/career">Careers</FooterLink>
+              <FooterLink href="/testimonials">Testimonials</FooterLink>
+              <FooterLink href="/contact">Contact</FooterLink>
             </ul>
           </div>
 
@@ -65,7 +79,7 @@ export default function Footer() {
             </div>
             <div className="flex items-center gap-2 text-gray-400">
               <Mail className="h-5 w-5" />
-              <span>info@jsonscommunications.com</span>
+              <span>jobs@jsonscommunications.com</span>
             </div>
           </div>
         </div>
@@ -76,14 +90,11 @@ export default function Footer() {
               &copy; {new Date().getFullYear()} JSons Communications. All rights reserved.
             </p>
             <div className="flex flex-wrap gap-4 text-sm text-gray-400">
-              <Link href="#" className="hover:text-white">
+              <Link href="/privacy" className="hover:text-white">
                 Privacy Policy
               </Link>
-              <Link href="#" className="hover:text-white">
+              <Link href="/terms" className="hover:text-white">
                 Terms of Service
-              </Link>
-              <Link href="#" className="hover:text-white">
-                Cookie Policy
               </Link>
             </div>
           </div>

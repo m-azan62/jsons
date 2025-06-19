@@ -13,73 +13,92 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true)
-      } else {
-        setIsScrolled(false)
-      }
+      setIsScrolled(window.scrollY > 10)
     }
-
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const isActive = (path) => {
-    return pathname === path
-  }
+  const isActive = (path) => pathname === path
 
   return (
     <header
-      className={`fixed left-0 top-0 z-50 w-full transition-all duration-300 ${isScrolled ? "bg-white shadow-md py-3" : "bg-transparent py-5"
-        }`}
+      className={`fixed left-0 top-0 z-50 w-full transition-all duration-300
+        ${isScrolled ? "bg-white shadow-md py-3" : "bg-transparent py-5"}`}
     >
       <div className="container mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8">
+        {/* Logo */}
         <Link href="/" className="flex items-center">
-          <div className="relative h-10 w-40">
-            <div className="flex items-center gap-2">
-
-              <img
-                src="/json.png"
-                alt="JSons Communications Logo"
-                className="h-12 w-auto mx-12"
-              />
-            </div>
-          </div>
+          <img
+            src="/json.png"
+            alt="JSons Communications Logo"
+            className="h-12 w-auto"
+          />
         </Link>
-
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center space-x-1 md:flex">
-          <NavLink href="/" isActive={isActive("/")} isScrolled={isScrolled}>
+          <NavLink
+            href="/"
+            isActive={isActive("/")}
+            isScrolled={isScrolled}
+            pathname={pathname}
+          >
             Home
           </NavLink>
-          <NavLink href="/services" isActive={isActive("/services")} isScrolled={isScrolled}>
+          <NavLink
+            href="/services"
+            isActive={isActive("/services")}
+            isScrolled={isScrolled}
+            pathname={pathname}
+          >
             Services
           </NavLink>
-          <NavLink href="/about" isActive={isActive("/about")} isScrolled={isScrolled}>
+          <NavLink
+            href="/about"
+            isActive={isActive("/about")}
+            isScrolled={isScrolled}
+            pathname={pathname}
+          >
             About
           </NavLink>
-          <NavLink href="/testimonials" isActive={isActive("/testimonials")} isScrolled={isScrolled}>
+          <NavLink
+            href="/testimonials"
+            isActive={isActive("/testimonials")}
+            isScrolled={isScrolled}
+            pathname={pathname}
+          >
             Testimonials
           </NavLink>
-          <NavLink href="/contact" isActive={isActive("/contact")} isScrolled={isScrolled}>
+          <NavLink
+            href="/contact"
+            isActive={isActive("/contact")}
+            isScrolled={isScrolled}
+            pathname={pathname}
+          >
             Contact
-          </NavLink>
-          <NavLink href="/career" isActive={isActive("/career")} isScrolled={isScrolled}>
-            Careers
           </NavLink>
         </nav>
 
+        {/* Phone + CTA */}
         <div className="hidden items-center space-x-4 md:flex">
           <a
             href="tel:+1234567890"
-            className={`flex items-center gap-2 ${isScrolled ? "text-gray-700" : "text-gray-900"} hover:text-green-600`}
+            className={`flex items-center gap-2 ${
+              isScrolled
+                ? "text-gray-700"
+                : pathname === "/"
+                ? "text-gray-900"
+                : "text-white"
+            } hover:text-green-600`}
           >
             <Phone className="h-4 w-4" />
             <span>+123 456 7890</span>
           </a>
-          <Link href="/contact">
-            <Button className="bg-green-600 text-white hover:bg-green-700">Get a Quote</Button>
+          <Link href="/career">
+            <Button className="bg-green-600 text-white hover:bg-green-700">
+              Apply Now
+            </Button>
           </Link>
         </div>
 
@@ -98,13 +117,25 @@ export default function Header() {
         <div className="absolute left-0 top-full w-full bg-white shadow-lg md:hidden">
           <div className="container mx-auto px-4 py-4 sm:px-6 lg:px-8">
             <nav className="flex flex-col space-y-4">
-              <MobileNavLink href="/" isActive={isActive("/")} onClick={() => setIsMenuOpen(false)}>
+              <MobileNavLink
+                href="/"
+                isActive={isActive("/")}
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Home
               </MobileNavLink>
-              <MobileNavLink href="/services" isActive={isActive("/services")} onClick={() => setIsMenuOpen(false)}>
+              <MobileNavLink
+                href="/services"
+                isActive={isActive("/services")}
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Services
               </MobileNavLink>
-              <MobileNavLink href="/about" isActive={isActive("/about")} onClick={() => setIsMenuOpen(false)}>
+              <MobileNavLink
+                href="/about"
+                isActive={isActive("/about")}
+                onClick={() => setIsMenuOpen(false)}
+              >
                 About
               </MobileNavLink>
               <MobileNavLink
@@ -114,15 +145,27 @@ export default function Header() {
               >
                 Testimonials
               </MobileNavLink>
-              <MobileNavLink href="/contact" isActive={isActive("/contact")} onClick={() => setIsMenuOpen(false)}>
+              <MobileNavLink
+                href="/contact"
+                isActive={isActive("/contact")}
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Contact
               </MobileNavLink>
-               <MobileNavLink href="/career" isActive={isActive("/career")} onClick={() => setIsMenuOpen(false)}>
+              <MobileNavLink
+                href="/career"
+                isActive={isActive("/career")}
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Careers
               </MobileNavLink>
+
+              {/* CTA */}
               <div className="pt-4">
                 <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
-                  <Button className="w-full bg-green-600 text-white hover:bg-green-700">Get a Quote</Button>
+                  <Button className="w-full bg-green-600 text-white hover:bg-green-700">
+                    Get a Quote
+                  </Button>
                 </Link>
               </div>
             </nav>
@@ -133,17 +176,22 @@ export default function Header() {
   )
 }
 
-function NavLink({ href, children, isActive, isScrolled }) {
+/* ---------- Helpers ---------- */
+
+function NavLink({ href, children, isActive, isScrolled, pathname }) {
+  const isHome = pathname === "/"
+  const base = "px-4 py-2 text-sm font-medium transition-colors"
+
+  const color = isActive
+    ? "text-green-600"
+    : isScrolled
+    ? "text-gray-700 hover:text-green-600"
+    : isHome
+    ? "text-gray-900 hover:text-green-600"
+    : "text-white hover:text-green-300"
+
   return (
-    <Link
-      href={href}
-      className={`px-4 py-2 text-sm font-medium transition-colors ${isActive
-        ? "text-green-600"
-        : isScrolled
-          ? "text-gray-700 hover:text-green-600"
-          : "text-gray-900 hover:text-green-600"
-        }`}
-    >
+    <Link href={href} className={`${base} ${color}`}>
       {children}
     </Link>
   )
@@ -153,9 +201,10 @@ function MobileNavLink({ href, onClick, children, isActive }) {
   return (
     <Link
       href={href}
-      className={`block py-2 text-base font-medium ${isActive ? "text-green-600" : "text-gray-900 hover:text-green-600"
-        }`}
       onClick={onClick}
+      className={`block py-2 text-base font-medium ${
+        isActive ? "text-green-600" : "text-gray-900 hover:text-green-600"
+      }`}
     >
       {children}
     </Link>

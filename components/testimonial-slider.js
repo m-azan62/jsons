@@ -5,7 +5,8 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react"
 
-const testimonials = [
+
+  const testimonials = [
   {
     id: 1,
     quote:
@@ -13,7 +14,7 @@ const testimonials = [
     author: "Sarah Johnson",
     position: "Marketing Director",
     company: "FinTech Solutions",
-    image: "/placeholder.png?height=100&width=100",
+    image: "/placeholder.png?height=100&width=100&text=1",
   },
   {
     id: 2,
@@ -22,7 +23,7 @@ const testimonials = [
     author: "Michael Chen",
     position: "Sales Manager",
     company: "Insurance Partners",
-    image: "/placeholder.png?height=100&width=100",
+    image: "/placeholder.png?height=100&width=100&text=2",
   },
   {
     id: 3,
@@ -31,7 +32,7 @@ const testimonials = [
     author: "Emily Rodriguez",
     position: "Customer Success Lead",
     company: "E-Commerce Plus",
-    image: "/placeholder.png?height=100&width=100",
+    image: "/placeholder.png?height=100&width=100&text=3",
   },
   {
     id: 4,
@@ -40,9 +41,28 @@ const testimonials = [
     author: "David Wilson",
     position: "Operations Director",
     company: "Global Services Inc.",
-    image: "/placeholder.png?height=100&width=100",
+    image: "/placeholder.png?height=100&width=100&text=4",
   },
-]
+  {
+    id: 5,
+    quote:
+      "Exceptional experience with JSons! Their campaign strategy directly contributed to a 25% increase in sales within the first quarter.",
+    author: "Ayesha Khan",
+    position: "Growth Manager",
+    company: "RetailPro",
+    image: "/placeholder.png?height=100&width=100&text=5",
+  },
+  {
+    id: 6,
+    quote:
+      "Their insights and expertise made our outreach smarter and more impactful. JSons helped us tap into markets we couldn’t reach before.",
+    author: "Liam Patel",
+    position: "Business Analyst",
+    company: "LogiTech Works",
+    image: "/placeholder.png?height=100&width=100&text=6",
+  },
+];
+
 
 export default function TestimonialSlider() {
   const [activeIndex, setActiveIndex] = useState(0)

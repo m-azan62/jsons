@@ -1,14 +1,24 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Phone, MessageSquare, Mail, MapPin, CheckCircle, ArrowRight, Users, BarChart, Award } from "lucide-react"
-import ServiceCard from "@/components/service-card"
-import TestimonialSlider from "@/components/testimonial-slider"
-import StatsCounter from "@/components/stats-counter"
-import SectionHeading from "@/components/section-heading"
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Phone,
+  MessageSquare,
+  Mail,
+  MapPin,
+  CheckCircle,
+  ArrowRight,
+  Users,
+  BarChart,
+  Award,
+} from "lucide-react";
+import ServiceCard from "@/components/service-card";
+import TestimonialSlider from "@/components/testimonial-slider";
+import StatsCounter from "@/components/stats-counter";
+import SectionHeading from "@/components/section-heading";
 
 export default function HomePage() {
   return (
@@ -16,10 +26,24 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-green-50 to-white pt-24 pb-16 md:pt-32 md:pb-24">
         <div className="absolute inset-0 z-0 opacity-30">
-          <svg className="h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <svg
+            className="h-full w-full"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+          >
             <defs>
-              <pattern id="grid" width="8" height="8" patternUnits="userSpaceOnUse">
-                <path d="M 8 0 L 0 0 0 8" fill="none" stroke="rgba(34, 197, 94, 0.2)" strokeWidth="0.5" />
+              <pattern
+                id="grid"
+                width="8"
+                height="8"
+                patternUnits="userSpaceOnUse"
+              >
+                <path
+                  d="M 8 0 L 0 0 0 8"
+                  fill="none"
+                  stroke="rgba(34, 197, 94, 0.2)"
+                  strokeWidth="0.5"
+                />
               </pattern>
             </defs>
             <rect width="100" height="100" fill="url(#grid)" />
@@ -30,32 +54,47 @@ export default function HomePage() {
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
             <div className="max-w-2xl">
               <Badge className="mb-4 bg-green-100 text-green-800 hover:bg-green-200">
-                A LEADING TELEMARKETING COMPANY
+                Top Telemarketing Company
               </Badge>
               <h1 className="mb-6 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl md:text-5xl lg:text-6xl">
-                Your Trusted Partner for{" "}
+                Your Trusted Partner{" "}
                 <span className="relative inline-block">
-                  <span className="relative z-10">Sales & Lead Generation</span>
+                  <span className="relative z-10"> for Lead Generation </span>
                   <span className="absolute bottom-2 left-0 z-0 h-3 w-full bg-green-200"></span>
                 </span>{" "}
-                Success
+                & Sales Solutions
               </h1>
               <p className="mb-8 text-lg leading-relaxed text-gray-600 sm:text-xl">
-                Since 2014, we've been helping businesses increase conversions and build lasting customer relationships
-                through expert telemarketing solutions.
+                Since 2014, J.Sons Communications has been a trusted partner for
+                businesses seeking high-performance telemarketing solutions. We
+                help increase conversions, drive sales, and build lasting
+                customer relationships through proven strategies and expert
+                outreach.
               </p>
 
               <div className="flex flex-col gap-4 sm:flex-row">
-                <Button size="lg" className="bg-green-600 text-white hover:bg-green-700">
-                  Get a Free Consultation
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-                <Button size="lg" variant="outline" className="border-green-600 text-green-600 hover:bg-green-50">
-                  Join Our Team
-                </Button>
+                <Link href="/contact">
+                  <Button
+                    size="lg"
+                    className="bg-green-600 text-white hover:bg-green-700 w-full sm:w-auto"
+                  >
+                    Get a Free Consultation
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+
+                <Link href="/career">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-green-600 text-green-600 hover:bg-green-50 w-full sm:w-auto"
+                  >
+                    Join Our Team
+                  </Button>
+                </Link>
               </div>
 
-              <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-8">
+              {/* <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-8">
                 <div className="flex items-center gap-2 text-sm text-gray-600">
                   <div className="flex -space-x-2">
                     {[1, 2, 3].map((i) => (
@@ -84,13 +123,13 @@ export default function HomePage() {
                   </div>
                   <span>4.9/5 rating</span>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             <div className="relative">
               <div className="relative z-10 overflow-hidden rounded-2xl shadow-2xl">
                 <Image
-                  src="/placeholder.png?height=800&width=600"
+                  src="/pic/home.webp"
                   alt="JSons Communications Team"
                   width={600}
                   height={800}
@@ -108,28 +147,45 @@ export default function HomePage() {
               <Phone className="h-8 w-8 flex-shrink-0 text-green-500" />
               <div className="min-w-0">
                 <p className="text-xs text-gray-500">Call Us</p>
-                <p className="truncate font-medium text-sm">+123 456 7890</p>
+                <p className="truncate font-medium text-sm">+92 3390807022</p>
               </div>
             </div>
-            <div className="flex items-center gap-3 rounded-lg border border-gray-200 bg-white p-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-              <MessageSquare className="h-8 w-8 flex-shrink-0 text-green-500" />
-              <div className="min-w-0">
-                <p className="text-xs text-gray-500">WhatsApp</p>
-                <p className="truncate font-medium text-sm">Chat Now</p>
+            <a
+              href="https://wa.me/923390807022?text=Hello%2C%20I%20am%20interested%20in%20learning%20more%20about%20your%20telemarketing%20services.%20Please%20let%20me%20know%20how%20we%20can%20get%20started."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="flex items-center gap-3 rounded-lg border border-gray-200 bg-white p-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                <MessageSquare className="h-8 w-8 flex-shrink-0 text-green-500" />
+
+                <div className="min-w-0 cursor-pointer">
+                  <p className="text-xs text-gray-500">WhatsApp</p>
+                  <p className="truncate font-medium text-sm">Chat Now</p>
+                </div>
               </div>
-            </div>
+            </a>
             <div className="flex items-center gap-3 rounded-lg border border-gray-200 bg-white p-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
               <Mail className="h-8 w-8 flex-shrink-0 text-green-500" />
               <div className="min-w-0">
                 <p className="text-xs text-gray-500">Email</p>
-                <p className="truncate font-medium text-sm">info@jsons.com</p>
+                <p className="truncate font-medium text-sm">
+                  jobs@jsonscommunication.com
+                </p>
               </div>
             </div>
-            <div className="flex items-center gap-3 rounded-lg border border-gray-200 bg-white p-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+            <div className="relative group flex items-center gap-3 rounded-lg border border-gray-200 bg-white p-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
               <MapPin className="h-8 w-8 flex-shrink-0 text-green-500" />
               <div className="min-w-0">
                 <p className="text-xs text-gray-500">Location</p>
-                <p className="truncate font-medium text-sm">Business Ave.</p>
+                <p className="truncate font-medium text-sm">
+                  Plot 84-A, Pakistan Town
+                </p>
+              </div>
+
+              {/* Tooltip - full address shown on hover */}
+              <div className="fixed z-50 hidden w-72 rounded bg-gray-900 px-3 py-2 text-xs text-white shadow-md group-hover:block">
+                Plot 84-A, second floor, Ovais C 3 Rd, Phase 2 Pakistan Town,
+                Islamabad, 44000
               </div>
             </div>
           </div>
@@ -144,128 +200,38 @@ export default function HomePage() {
             title="Comprehensive Telemarketing Solutions"
             description="We offer tailored telemarketing services to meet your specific business needs and help you achieve your goals."
           />
+          <div className="mx-auto max-w-5xl mt-8 px-4 text-center">
+            <h2 className="text-3xl font-bold mb-2">
+              Comprehensive Telemarketing Solutions
+            </h2>
+            <p className="text-lg text-gray-600 mb-8">
+              We offer tailored telemarketing services to meet your specific
+              business needs and help you achieve your goals.
+            </p>
 
-          <Tabs defaultValue="sales" className="mx-auto max-w-5xl">
-            <TabsList className="mb-8 grid w-full grid-cols-1 gap-2 bg-green-50 sm:grid-cols-3 sm:gap-0">
-              <TabsTrigger value="sales" className="data-[state=active]:bg-green-600 data-[state=active]:text-white">
-                Sales & Lead Generation
-              </TabsTrigger>
-              <TabsTrigger value="support" className="data-[state=active]:bg-green-600 data-[state=active]:text-white">
-                Customer Support
-              </TabsTrigger>
-              <TabsTrigger
-                value="specialized"
-                className="data-[state=active]:bg-green-600 data-[state=active]:text-white"
-              >
-                Specialized Services
-              </TabsTrigger>
-            </TabsList>
-
-            <TabsContent value="sales" className="mt-0">
-              <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
-                <ServiceCard
-                  icon="Phone"
-                  title="Cold Calling"
-                  description="Strategic outreach to potential clients to generate interest in your products or services."
-                />
-                <ServiceCard
-                  icon="Calendar"
-                  title="Appointment Setting"
-                  description="Scheduling qualified meetings between your sales team and potential clients."
-                />
-                <ServiceCard
-                  icon="RefreshCw"
-                  title="Follow-up Calls"
-                  description="Maintaining contact with leads to nurture relationships and increase conversion rates."
-                />
-                <ServiceCard
-                  icon="Filter"
-                  title="Lead Qualification"
-                  description="Identifying and qualifying prospects based on your specific criteria."
-                />
-                <ServiceCard
-                  icon="TrendingUp"
-                  title="Sales Conversion"
-                  description="Converting leads into customers through effective sales techniques."
-                />
-                <ServiceCard
-                  icon="BarChart"
-                  title="Performance Tracking"
-                  description="Detailed reporting and analytics to measure campaign effectiveness."
-                />
-              </div>
-            </TabsContent>
-
-            <TabsContent value="support" className="mt-0">
-              <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
-                <ServiceCard
-                  icon="PhoneIncoming"
-                  title="Inbound Support"
-                  description="Professional handling of customer inquiries, orders, and support requests."
-                />
-                <ServiceCard
-                  icon="PhoneOutgoing"
-                  title="Outbound Support"
-                  description="Proactive customer outreach for satisfaction surveys and service updates."
-                />
-                <ServiceCard
-                  icon="MessageSquare"
-                  title="Live Chat Support"
-                  description="Real-time customer assistance through web-based chat platforms."
-                />
-                <ServiceCard
-                  icon="Mail"
-                  title="Email Support"
-                  description="Timely and professional responses to customer email inquiries."
-                />
-                <ServiceCard
-                  icon="Users"
-                  title="Customer Retention"
-                  description="Strategies to maintain customer relationships and reduce churn."
-                />
-                <ServiceCard
-                  icon="Clock"
-                  title="24/7 Availability"
-                  description="Round-the-clock support options to serve customers at any time."
-                />
-              </div>
-            </TabsContent>
-
-            <TabsContent value="specialized" className="mt-0">
-              <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
-                <ServiceCard
-                  icon="Briefcase"
-                  title="Finance & Insurance"
-                  description="Specialized telemarketing for financial services and insurance products."
-                />
-                <ServiceCard
-                  icon="ShoppingCart"
-                  title="E-commerce Support"
-                  description="Order processing, returns management, and customer service for online retailers."
-                />
-                <ServiceCard
-                  icon="Target"
-                  title="Campaign Management"
-                  description="End-to-end planning, execution, and optimization of telemarketing campaigns."
-                />
-                <ServiceCard
-                  icon="Globe"
-                  title="Multilingual Services"
-                  description="Support in multiple languages to reach diverse customer bases."
-                />
-                <ServiceCard
-                  icon="Shield"
-                  title="Compliance Management"
-                  description="Ensuring all calls adhere to industry regulations and best practices."
-                />
-                <ServiceCard
-                  icon="BarChart2"
-                  title="Market Research"
-                  description="Gathering customer insights and market intelligence through targeted calls."
-                />
-              </div>
-            </TabsContent>
-          </Tabs>
+            <div className="grid gap-6 sm:gap-8 md:grid-cols-2 text-left">
+              <ServiceCard
+                icon="UserPlus"
+                title="Lead Generation"
+                description="We deliver 3,000+ qualified leads daily across key industries like Insurance and Home Improvement. Our targeted strategies and expert agents ensure a consistent flow of potential customers."
+              />
+              <ServiceCard
+                icon="Shield"
+                title="Life Insurance Sales"
+                description="Generating over $100,000 in monthly premiums, our skilled on-shore sales team and offshore support deliver high-converting, customer-focused insurance sales solutions."
+              />
+              <ServiceCard
+                icon="CheckCircle"
+                title="Quality Assurance"
+                description="Our custom QA systems improve agent performance, ensure compliance, and maintain top-tier service standards, tailored to meet your business needs."
+              />
+              <ServiceCard
+                icon="PhoneIncoming"
+                title="Inbound & Customer Service"
+                description="Our trained professionals handle inbound calls with speed and empathy, providing seamless support from queries to issue resolution, always putting the customer first."
+              />
+            </div>
+          </div>
 
           <div className="mt-12 text-center">
             <Link href="/services">
@@ -281,33 +247,43 @@ export default function HomePage() {
       {/* Mission & Vision Section */}
       <section className="bg-gradient-to-br from-green-600 to-green-700 py-16 text-white sm:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-8 md:grid-cols-2 lg:gap-16">
-            <div className="relative">
+          <div className="grid gap-8 md:grid-cols-2 lg:gap-16 items-stretch">
+            {/* Mission Box */}
+            <div className="relative flex flex-col">
               <div className="absolute -left-4 -top-4 h-24 w-24 rounded-lg bg-white opacity-10 hidden sm:block"></div>
-              <div className="relative z-10 rounded-lg bg-white/10 p-6 backdrop-blur-sm sm:p-8">
+              <div className="relative z-10 flex flex-col rounded-lg bg-white/10 p-6 backdrop-blur-sm sm:p-8 h-full">
                 <div className="mb-6 h-1 w-16 bg-white"></div>
-                <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-green-200">OUR MISSION</h3>
+                <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-green-200">
+                  OUR MISSION
+                </h3>
                 <h2 className="mb-6 text-xl font-bold sm:text-2xl lg:text-3xl">
-                  We are committed to providing our clients the best strategic guidance available
+                  We deliver high-impact telemarketing solutions that drive
+                  measurable growth and client success.
                 </h2>
-                <p className="text-green-100">
-                  Our mission is to deliver exceptional telemarketing services that drive measurable results for our
-                  clients while maintaining the highest standards of professionalism and integrity.
+                <p className="text-green-100 mt-auto">
+                  At J.Sons Communications, we are committed to strategic
+                  excellence, results-driven service, and the highest standards
+                  of integrity.
                 </p>
               </div>
             </div>
 
-            <div className="relative">
+            {/* Vision Box */}
+            <div className="relative flex flex-col">
               <div className="absolute -right-4 -top-4 h-24 w-24 rounded-lg bg-white opacity-10 hidden sm:block"></div>
-              <div className="relative z-10 rounded-lg bg-white/10 p-6 backdrop-blur-sm sm:p-8">
+              <div className="relative z-10 flex flex-col rounded-lg bg-white/10 p-6 backdrop-blur-sm sm:p-8 h-full">
                 <div className="mb-6 h-1 w-16 bg-white"></div>
-                <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-green-200">OUR VISION</h3>
+                <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-green-200">
+                  OUR VISION
+                </h3>
                 <h2 className="mb-6 text-xl font-bold sm:text-2xl lg:text-3xl">
-                  Leading the Industry with Innovative Solutions that Forge Lasting Bonds & Drive Business Success
+                  Redefining Telemarketing with Innovation, Performance &
+                  Lasting Partnerships.
                 </h2>
-                <p className="text-green-100">
-                  We aim to be the premier telemarketing partner for businesses worldwide, known for our innovative
-                  approach, exceptional results, and commitment to excellence.
+                <p className="text-green-100 mt-auto">
+                  We aim to be the premier telemarketing partner for businesses
+                  worldwide, known for our innovative approach, exceptional
+                  results, and commitment to excellence.
                 </p>
               </div>
             </div>
@@ -320,54 +296,65 @@ export default function HomePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="WHY CHOOSE US"
-            title="What Sets Us Apart"
-            description="We deliver results through expertise, dedication, and a customer-first approach"
+            title="Experience. Expertise. Results."
+            description="We combine strategic excellence with a customer-first mindset to deliver real, measurable outcomes."
           />
 
-          <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-4">
-            <Card className="group overflow-hidden border-none bg-white transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+          <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-4 items-stretch">
+            {/* Card 1 */}
+            <Card className="group flex flex-col h-full overflow-hidden border-none bg-white transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
               <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-green-100 opacity-0 transition-all duration-500 group-hover:opacity-100 hidden sm:block"></div>
-              <CardContent className="relative z-10 p-6">
+              <CardContent className="relative z-10 p-6 flex flex-col flex-grow">
                 <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-green-100 text-green-600 transition-all duration-300 group-hover:bg-green-600 group-hover:text-white">
                   <Users className="h-6 w-6" />
                 </div>
                 <h3 className="mb-3 text-xl font-bold">10+ Years Experience</h3>
                 <p className="text-gray-600">
-                  Over a decade of industry expertise and proven results across multiple sectors.
+                  A decade of success in driving results across diverse
+                  industries.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="group overflow-hidden border-none bg-white transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+            {/* Card 2 */}
+            <Card className="group flex flex-col h-full overflow-hidden border-none bg-white transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
               <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-green-100 opacity-0 transition-all duration-500 group-hover:opacity-100 hidden sm:block"></div>
-              <CardContent className="relative z-10 p-6">
+              <CardContent className="relative z-10 p-6 flex flex-col flex-grow">
                 <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-green-100 text-green-600 transition-all duration-300 group-hover:bg-green-600 group-hover:text-white">
                   <Award className="h-6 w-6" />
                 </div>
                 <h3 className="mb-3 text-xl font-bold">Expert Team</h3>
-                <p className="text-gray-600">Highly trained professionals with specialized industry knowledge.</p>
+                <p className="text-gray-600">
+                  Skilled agents with deep industry knowledge.
+                </p>
               </CardContent>
             </Card>
 
-            <Card className="group overflow-hidden border-none bg-white transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+            {/* Card 3 */}
+            <Card className="group flex flex-col h-full overflow-hidden border-none bg-white transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
               <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-green-100 opacity-0 transition-all duration-500 group-hover:opacity-100 hidden sm:block"></div>
-              <CardContent className="relative z-10 p-6">
+              <CardContent className="relative z-10 p-6 flex flex-col flex-grow">
                 <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-green-100 text-green-600 transition-all duration-300 group-hover:bg-green-600 group-hover:text-white">
                   <CheckCircle className="h-6 w-6" />
                 </div>
                 <h3 className="mb-3 text-xl font-bold">Quality Monitoring</h3>
-                <p className="text-gray-600">Industry-leading call quality assurance and performance tracking.</p>
+                <p className="text-gray-600">
+                  Real-time QA for consistent performance.
+                </p>
               </CardContent>
             </Card>
 
-            <Card className="group overflow-hidden border-none bg-white transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+            {/* Card 4 */}
+            <Card className="group flex flex-col h-full overflow-hidden border-none bg-white transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
               <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-green-100 opacity-0 transition-all duration-500 group-hover:opacity-100 hidden sm:block"></div>
-              <CardContent className="relative z-10 p-6">
+              <CardContent className="relative z-10 p-6 flex flex-col flex-grow">
                 <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-green-100 text-green-600 transition-all duration-300 group-hover:bg-green-600 group-hover:text-white">
                   <BarChart className="h-6 w-6" />
                 </div>
-                <h3 className="mb-3 text-xl font-bold">Cost-Effective</h3>
-                <p className="text-gray-600">Flexible solutions that deliver high ROI and scale with your business.</p>
+                <h3 className="mb-3 text-xl font-bold">Smart Solutions</h3>
+                <p className="text-gray-600">
+                  High-ROI services tailored to your goals.
+                </p>
               </CardContent>
             </Card>
           </div>
@@ -387,13 +374,17 @@ export default function HomePage() {
             <StatsCounter value={10} suffix="+" label="Years of Experience" />
             <StatsCounter value={500} suffix="+" label="Satisfied Clients" />
             <StatsCounter value={1} suffix="M+" label="Calls Handled" />
-            <StatsCounter value={30} suffix="%" label="Avg. Conversion Increase" />
+            <StatsCounter
+              value={30}
+              suffix="%"
+              label="Avg. Conversion Increase"
+            />
           </div>
         </div>
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 sm:py-24">
+      {/* <section className="py-16 sm:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="TESTIMONIALS"
@@ -402,26 +393,9 @@ export default function HomePage() {
           />
 
           <TestimonialSlider />
-
-          <div className="mt-16 text-center">
-            <h3 className="mb-8 text-2xl font-bold text-gray-900">Trusted by Leading Companies</h3>
-            <div className="flex flex-wrap justify-center gap-4 opacity-70 sm:gap-8">
-              {[1, 2, 3, 4, 5].map((i) => (
-                <div key={i} className="h-12 w-24 rounded bg-gray-200 sm:w-32"></div>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-12 text-center">
-            <Link href="/testimonials">
-              <Button className="bg-green-600 text-white hover:bg-green-700">
-                View All Testimonials
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
-          </div>
+          
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-16 sm:py-24">
@@ -436,11 +410,15 @@ export default function HomePage() {
                   Ready to Transform Your Business?
                 </h2>
                 <p className="mb-10 text-lg leading-relaxed text-green-100 sm:text-xl">
-                  Join hundreds of satisfied clients who have boosted their sales and improved customer relationships
-                  with JSons Communications.
+                  Join hundreds of satisfied clients who have boosted their
+                  sales and improved customer relationships with JSons
+                  Communications.
                 </p>
                 <Link href="/contact">
-                  <Button size="lg" className="bg-white text-green-600 hover:bg-green-50">
+                  <Button
+                    size="lg"
+                    className="bg-white text-green-600 hover:bg-green-50"
+                  >
                     Get Started Today
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
@@ -451,5 +429,5 @@ export default function HomePage() {
         </div>
       </section>
     </div>
-  )
+  );
 }

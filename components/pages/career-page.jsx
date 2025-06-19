@@ -95,7 +95,7 @@ export default function CareerPage() {
       />
       <Header />
       <PageBanner
-        title="Careers at JSons Communications"
+        title="Careers"
         description="Join our award-winning telemarketing team."
         image="/placeholder.png?height=600&width=1200&text=Careers"
       />
